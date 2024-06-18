@@ -118,7 +118,6 @@ func assetReader(name string) io.Reader {
 	} else {
 		panic("file not found: " + name)
 	}
-	fmt.Println(r.Len())
 	reader, err := gzip.NewReader(r)
 	if err != nil {
 		panic(fmt.Sprintf("could not decompress %s: %s", name, err.Error()))
